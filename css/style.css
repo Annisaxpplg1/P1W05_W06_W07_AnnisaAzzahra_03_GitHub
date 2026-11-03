@@ -211,6 +211,59 @@ button {
   cursor: pointer;
 }
 
+.aksi-kalkulator {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.aksi-kalkulator output {
+  color: #1D3557;
+  font-weight: 600;
+}
+
+.kalkulator {
+  max-width: 24rem;
+  margin: 0 auto;
+}
+
+.kalkulator-display {
+  display: block;
+  overflow: hidden;
+  width: 100%;
+  margin-bottom: 1rem;
+  padding: 0.75rem 1rem;
+  border: 1px solid #CCCCCC;
+  border-radius: 6px;
+  background-color: #F7F7F7;
+  color: #1D3557;
+  font-size: 2rem;
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+}
+
+.kalkulator-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.5rem;
+}
+
+.kalkulator-grid button {
+  min-width: 0;
+  min-height: 3rem;
+  padding: 0.5rem;
+}
+
+.kalkulator-grid .kalkulator-operator,
+.kalkulator-grid .kalkulator-equals {
+  background-color: #1D3557;
+}
+
+.kalkulator-grid .kalkulator-clear {
+  background-color: #666666;
+}
+
 /* 7. Footer */
 footer {
   background-color: #1D3557;

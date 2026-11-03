@@ -18,7 +18,7 @@ console.log(`Nilai tugas ${nilaiTugas}, UTS ${nilaiUts}, UAS ${nilaiUas}`
 );
 
 // Fungsi perhitungan nilai
-function hitungRataRata(tugas, uts, uas) { return (tugas + uts + uas) / 3;
+function hitungRataRataRapor(tugas, uts, uas) {return (tugas + uts + uas) / 3;
 }
 
 function predikat(nilai) {
@@ -28,17 +28,18 @@ function predikat(nilai) {
     return "B";
   } else if (nilai >= 70) {
     return "C";
+  } else {
+    return "D";
   }
-  return "D";
 }
 
 function rapor(namaSiswa, tugas, uts, uas) {
-  const rata = hitungRataRata(tugas, uts, uas);
+  const rata = hitungRataRataRapor(tugas, uts, uas);
   return `${namaSiswa}: rata-rata ${rata}, predikat ${predikat(rata)}`;
 }
 
 // Hasil nilai Annisa
-const rataRata = hitungRataRata(nilaiTugas, nilaiUts, nilaiUas);
+const rataRata = hitungRataRataRapor(nilaiTugas, nilaiUts, nilaiUas);
 const lulus = rataRata >= kkm;
 const dapatSertifikat = lulus && kehadiran >= 80;
 
@@ -60,6 +61,7 @@ console.log(`predikat(84) = ${predikat(84)}`); // B
 console.log(`predikat(70) = ${predikat(70)}`); // C
 console.log(`predikat(69) = ${predikat(69)}`); // D
 // 6. Rapor beberapa siswa
-console.log(rapor("Andi", 85, 78, 89));
+console.log(rapor("Annisa", 85, 78, 89));
 console.log(rapor("Sinta", 92, 88, 96));
 console.log(rapor("Budi", 70, 65, 72));
+
