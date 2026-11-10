@@ -23,16 +23,28 @@ if (daftarSkill) {
 jumlahSkill.textContent = `Ada ${skills.length} keahlian yang sedang
 saya kembangkan.`;
 }
-
 // 2. Tema gelap (semua halaman)
-const tombolTema = document.querySelector ("#tombol-tema");
-tombolTema.addEventListener("click", () => {
-document.body.classList.toggle("gelap");
-if (document.body.classList.contains("gelap")) {
-tombolTema.textContent = "Mode Terang";
-} else {
-tombolTema.textContent = "Mode Gelap";
+const tombolTema = document.querySelector("#tombol-tema");
+
+// Mengambil tema yang tersimpan
+const temaTersimpan = localStorage.getItem("tema");
+
+// Menerapkan tema saat halaman dibuka
+if (temaTersimpan === "gelap") {
+    document.body.classList.add("gelap");
+    tombolTema.textContent = "Mode Terang";
 }
+
+tombolTema.addEventListener("click", () => {
+    document.body.classList.toggle("gelap");
+
+    if (document.body.classList.contains("gelap")) {
+        tombolTema.textContent = "Mode Terang";
+        localStorage.setItem("tema", "gelap");
+    } else {
+        tombolTema.textContent = "Mode Gelap";
+        localStorage.setItem("tema", "terang");
+    }
 });
 
 // 3. Penghitung karakter pesan (halaman Kontak)
@@ -60,21 +72,21 @@ const proyek = [
 {
 judul: "Halaman Profil Pertama",
 kategori: "HTML",
-gambar: "img/proyek-profil.png",
+gambar: "img/screenshot-homepage-portofolio.jfif",
 alt: "Tangkapan layar halaman profil Andi Pratama",
 deskripsi: "Halaman web pertama saya, dibuat dengan HTMl dasar.",
 },
 {
 judul: "Form Kontak",
 kategori: "HTML",
-gambar: "img/proyek-kontak.png",
+gambar: "img/screenshot-kontak-porto.jfif",
 alt: "Tangkapan layar form kontak berisi lima isian",
 deskripsi: "Form dengan label dan validasi bawaan browser.",
 },
 {
 judul: "Tabel Jadwal Belajar",
 kategori: "HTML",
-gambar: "img/proyek-jadwal.png",
+gambar: "img/screenshot-jadwal-belajar-porto.jfif",
 alt: "Tangkapan layar tabel jadwal belajar mandiri",
 deskripsi: "Jadwal belajar mingguan dengan thead dan tbody.",
 },
