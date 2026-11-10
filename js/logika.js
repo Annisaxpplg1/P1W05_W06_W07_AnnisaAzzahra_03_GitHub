@@ -49,7 +49,6 @@ console.log("Dari 5, 9, 2:", nilaiTerbesar(5, 9, 2));
 console.log("Dari 80, 75, 80:", nilaiTerbesar(80, 75, 80));
 console.log("Dari -3, -7, -1:", nilaiTerbesar(-3, -7, -1));
 
-
 // 4. Fungsi Menentukan Tahun Kabisat
 function tahunKabisat(tahun) {
     return (tahun % 4 === 0 && tahun % 100 !== 0) || tahun % 400 === 0;
@@ -61,7 +60,6 @@ console.log("Tahun 2024:", tahunKabisat(2024));
 console.log("Tahun 2026:", tahunKabisat(2026));
 console.log("Tahun 1900:", tahunKabisat(1900));
 console.log("Tahun 2000:", tahunKabisat(2000));
-
 
 // 5. Fungsi Menghitung Harga Setelah Diskon
 function hargaSetelahDiskon(total) {
